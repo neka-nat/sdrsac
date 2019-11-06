@@ -12,6 +12,7 @@ picos = "*"
 scipy = "*"
 
 [dev-packages]
+twine = "*"
 
 [requires]
 python_version = "3.6"
