@@ -57,7 +57,7 @@ def sdrsac(m, b, max_itr=10000,
                     best_rot = np.dot(rot_icp, rot)
                     best_t = np.dot(rot_icp, t) + t_icp
                     p_i = max_inls / m.shape[1]
-                    t_max = np.log(1.0 - ps) / np.log(1.0 - p_i**k)
+                    t_max = np.log(1.0 - ps) / max(np.log(1.0 - p_i**k), 1.0e-8)
                     for c in callbacks:
                         c(best_rot, best_t)
             iter += iter
