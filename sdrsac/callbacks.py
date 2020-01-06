@@ -16,7 +16,7 @@ class Open3dVisualizerCallback(object):
     """
     def __init__(self, source, target, save=False,
                  keep_window=True):
-        self._vis = o3.Visualizer()
+        self._vis = o3.visualization.Visualizer()
         self._vis.create_window()
         self._source = source
         self._target = target
@@ -42,7 +42,9 @@ class Open3dVisualizerCallback(object):
         trans[:3, :3] = rot
         trans[:3, 3] = t
         self._result.transform(trans)
-        self._vis.update_geometry()
+        self._vis.update_geometry(self._source)
+        self._vis.update_geometry(self._target)
+        self._vis.update_geometry(self._result)
         self._vis.poll_events()
         self._vis.update_renderer()
         if self._save:

@@ -155,7 +155,7 @@ setup(
     long_description_content_type='text/markdown',
     ext_modules=ext_modules,
     install_requires=['pybind11>=2.2', 'numpy',
-                      'open3d-python', 'cvxopt',
+                      'open3d', 'cvxopt',
                       'picos', 'scipy'],
     cmdclass={'build_ext': BuildExt},
     zip_safe=False,

@@ -5,8 +5,8 @@ from . import sdp
 
 
 def to_pointcloud(arr):
-    pc = o3.PointCloud()
-    pc.points = o3.Vector3dVector(arr.T)
+    pc = o3.geometry.PointCloud()
+    pc.points = o3.utility.Vector3dVector(arr.T)
     return pc
 
 
